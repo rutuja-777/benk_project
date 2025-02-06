@@ -17,3 +17,8 @@ git branch -d feature-rutuja - to delete feature-rutuja branch
 git remote -v - to see where origin is pointing
 
 pull request - to merge the changes you made in your branch to other branch
+
+****When to Use git pull - git pull origin release
+✅ When collaborating with a team and you want the latest updates before making new changes.
+✅ Before pushing your work to ensure you are working with the latest code.
+✅ When switching branches to ensure you have the most up-to-date code.
