@@ -22,19 +22,3 @@ pull request - to merge the changes you made in your branch to other branch
 ✅ When collaborating with a team and you want the latest updates before making new changes.
 ✅ Before pushing your work to ensure you are working with the latest code.
 ✅ When switching branches to ensure you have the most up-to-date code.
-
-For removing changes:
-scenario1: I have made changes, but havent staged yet 
-    use command: git restore file_name
-    and changes will be removed
-
-scenario2: I have made changes, and I have staged them
-    use command: git restore --staged <file> to unstage the changes and
-                 git restore file_name to completely remove the changes
-
-scenario3: I have made changes, and I have commited them
-    use command: 
-    git log :to check commit log history, the most recent commit will be at the top. Choose whiccommit       you want to go back to and copy hash value.
-    git reset #commit value :the changes will go back to staged
-    git reset --hard #commit value : the changes will be completely gone, from staging as well
-
