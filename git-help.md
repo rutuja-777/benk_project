@@ -38,3 +38,15 @@ scenario3: I have made changes, and I have commited them
     git reset #commit value :the changes will go back to staged
     git reset --hard #commit value : the changes will be completely gone, from staging as well
 
+Git fork and working with project hosted in different git account:
+ 1. Serch the project in github search and once you find the repository , fork the repository.
+ 2. Forking the repository will create a copy of that project in your github.
+ 3. Fork repository url is called upstream
+ 4. git clone your repository on your local.
+ 5. Create a feature branch and make your changes.
+ 6. stage and commit them into local
+ 7. push the changes to remote feature branch. 
+ 8. create pull request- and by default the PR is created from origin/feature -> upstream/main
+ 9. The owner of upstream repository will review PR and merge ito main
+ 10. To sync upstream main to your main , set upstream in your local :  git remote add upstream <forked repo url> and the use git pull upstream main - to copy upstream main intou ur local main
+ 11. Then push your local main (newly synched with upstream) to github main - git push origin main
