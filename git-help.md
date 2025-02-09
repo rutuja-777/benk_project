@@ -77,3 +77,4 @@ Git fork and working with project hosted in different git account:
     1.When you are not in sync with main branch
     2.Someone has changed the same line and pushed in main, where I am also trying to make a change.So git doesnt know which change to keep. 
 
+Best practices:
