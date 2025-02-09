@@ -78,3 +78,47 @@ Git fork and working with project hosted in different git account:
     2.Someone has changed the same line and pushed in main, where I am also trying to make a change.So git doesnt know which change to keep. 
 
 Best practices:
+    1. Before starting any work, always sync your local repository with the latest remote changes. Regularly pull changes from main to avoid large merge conflicts later.
+        git checkout main
+        git pull origin main  # Fetch and merge latest changes from remote
+    2. Never work directly on main. Always create a feature branch for your work.
+        git checkout -b feature-branch main
+        Keeps main stable and makes it easier to track changes per feature.
+    3. Make small, atomic commits instead of large ones. Use meaningful commit messages.
+        git commit -m "Fix issue #123: Improve query performance in reports"
+            Best Practice: Follow a structured commit format:
+            feat: New feature
+            fix: Bug fix
+            refactor: Code improvements
+            docs: Documentation changes
+    4.Instead of directly pulling, use git fetch to review changes before merging.
+        git fetch origin main
+        git diff main origin/main  # See the differences
+        git merge origin/main      # Merge when ready
+    5.use git rebase instead git pull - Rebasing keeps the commit history clean by applying changes on top of the latest main.
+        git checkout feature-branch
+        git pull --rebase origin main
+    6.If you need to switch branches but have uncommitted changes, stash them.
+        git stash save "WIP: refactoring API"
+        git checkout main
+        git pull origin main
+        git checkout feature-branch
+        git stash pop
+    7.Push to Remote Frequently
+        To avoid conflicts with teammates, push your changes regularly. 
+        git push origin feature-branch
+        💡 Best Practice: Use git push --force-with-lease (instead of git push --force) when rebasing, to prevent overwriting teammates' changes.
+        git push --force-with-lease
+    
+    8.Keep Your PRs Small & Focused
+        Before merging, raise a Pull Request (PR) with a small, focused change.
+        git push origin feature-branch
+    💡 Best Practice:
+        Keep PRs under 500 lines of code for easier review.
+        Write a clear PR description explaining the changes.
+        
+    9.Uncommit / remove the changes
+        git reset --soft HEAD~1  # Keep changes
+        git reset --hard HEAD~1  # Discard changes
+
+
