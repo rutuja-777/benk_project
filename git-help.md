@@ -44,3 +44,11 @@ git remote -v
 
 git stash:
     Lets say you made some changes and you want to park it somwhere. You want to Keep the changes somewhere so that you can later retrive it and currently do not want in your codebase.
+
+    git stash - saves your current changes into stash and removes changes from your current working feature branch
+    git stash list - shows all the changes that have been stashed
+    git stash pop - pops/retrieve the latest changes that have been stashed in the stash list
+    git stash clear - clears the stash
+    git stash save <'add a meaningful comment'> - saves the changes on stash with the provided comment
+    git stash pop 0 | git stash pop <index on the stash list> - retrives the change from stash list for the defined index
+    By default stashing will save changes from modifed files/already git tracked files.So if you want to save tracked as well as untracked files use : git stash -u
