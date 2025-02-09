@@ -52,3 +52,10 @@ git stash:
     git stash save <'add a meaningful comment'> - saves the changes on stash with the provided comment
     git stash pop 0 | git stash pop <index on the stash list> - retrives the change from stash list for the defined index
     By default stashing will save changes from modifed files/already git tracked files.So if you want to save tracked as well as untracked files use : git stash -u
+
+    git diff <branch name> : gives differences between the current branch you are working on and branch name you suggested
+
+    merge conflicts: When you are merging the code you basically would try to make your code in sync with main code and add the new feature. 
+    1.When you are not in sync with main branch
+    2.Someone has changed the same line and pushed in main, where I am also trying to make a change.So git doesnt know which change to keep. 
+     
