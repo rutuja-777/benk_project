@@ -38,15 +38,34 @@ scenario3: I have made changes, and I have commited them
     git reset #commit value :the changes will go back to staged
     git reset --hard #commit value : the changes will be completely gone, from staging as well
 
+
+git remote -v 
+    - to see where origin is pointing
+    - to see where upstream is pointing
+
 Git fork and working with project hosted in different git account:
- 1. Serch the project in github search and once you find the repository , fork the repository.
- 2. Forking the repository will create a copy of that project in your github.
- 3. Fork repository url is called upstream
- 4. git clone your repository on your local.
- 5. Create a feature branch and make your changes.
- 6. stage and commit them into local
- 7. push the changes to remote feature branch. 
- 8. create pull request- and by default the PR is created from origin/feature -> upstream/main
- 9. The owner of upstream repository will review PR and merge ito main
- 10. To sync upstream main to your main , set upstream in your local :  git remote add upstream <forked repo url> and the use git pull upstream main - to copy upstream main intou ur local main
- 11. Then push your local main (newly synched with upstream) to github main - git push origin main
+   1. Serch the project in github search and once you find the repository , fork the repository.
+   2. Forking the repository will create a copy of that project in your github.
+   3. Fork repository url is called upstream
+   4. git clone your repository on your local.
+   5. Create a feature branch and make your changes.
+   6. stage and commit them into local
+   7. push the changes to remote feature branch. 
+   8. create pull request- and by default the PR is created from origin/feature -> upstream/main
+   9. The owner of upstream repository will review PR and merge ito main
+   10. To sync upstream main to your main , set upstream in your local :  
+        git remote add upstream <forked repo url> 
+        and the use git pull upstream main - to copy upstream main intou ur local main
+   11. Then push your local main (newly synched with upstream) to github main - git push origin main
+
+  git stash:
+    Lets say you made some changes and you want to park it somwhere. You want to Keep the changes somewhere so that you can later retrive it and currently do not want in your codebase.
+
+    git stash - saves your current changes into stash and removes changes from your current working feature branch
+    git stash list - shows all the changes that have been stashed
+    git stash pop - pops/retrieve the latest changes that have been stashed in the stash list
+    git stash clear - clears the stash
+    git stash save <'add a meaningful comment'> - saves the changes on stash with the provided comment
+    git stash pop 0 | git stash pop <index on the stash list> - retrives the change from stash list for the defined index
+    By default stashing will save changes from modifed files/already git tracked files.
+      So if you want to save tracked as well as untracked files use : git stash -u
