@@ -38,3 +38,9 @@ scenario3: I have made changes, and I have commited them
     git reset #commit value :the changes will go back to staged
     git reset --hard #commit value : the changes will be completely gone, from staging as well
 
+git remote -v 
+    - to see where origin is pointing
+    - to see where upstream is pointing
+
+git stash:
+    Lets say you made some changes and you want to park it somwhere. You want to Keep the changes somewhere so that you can later retrive it and currently do not want in your codebase.
